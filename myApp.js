@@ -22,7 +22,7 @@ app.get("/json",function(req,res){
     res.json({"message" : (process.env.MESSAGE_STYLE === "uppercase" ? m.toUpperCase(): m)})
 })
 
-app.get('/now', function(req, res, next) {
+app.get('/now', function(req, res) {
     req["time"] = new Date();
     next();
   }, function(req, res) {
@@ -33,6 +33,10 @@ app.get("/:word/echo",function(req,res,next){
     res.json({"echo":req.params.word})
 })
 
+app.get("/name",function(req,res){
+    res.json({"name":req.query.first+ " " + req.query.last})
+})
+7
 
 
 
