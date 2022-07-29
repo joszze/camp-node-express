@@ -13,7 +13,7 @@ app.get("/",function(req,res){
 
 app.get("/json",function(req,res){  
     let m = "Hello json"  
-    res.json({"message" : (process.env.MESSAGE_STYLE === "uppercase" ? m.toUpperCase(): m.toLowerCase())})
+    res.json({"message" : (process.env.MESSAGE_STYLE === "uppercase" ? m.toUpperCase(): m)})
 })
 
 
