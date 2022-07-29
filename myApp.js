@@ -29,7 +29,9 @@ app.get('/now', function(req, res, next) {
     res.json({"time":req.time.toString()})
   });
 
-
+app.get("/:word/echo",function(req,res,next){
+    res.json(req.params)
+})
 
 
 
