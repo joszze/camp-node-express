@@ -9,8 +9,9 @@ app.get("/",function(req,res){
     res.sendFile(__dirname + "/views/index.html")
 })
 
-app.get("/json",function(req,res){
-    res.json({"message":"Hello json"})
+app.get("/json",function(req,res){  
+    let m = "Hello json"  
+    res.json({"message" : (process.env.MESSAGE_STYLE === "uppercase" ? m.toUpperCase(): m)})
 })
 
 
