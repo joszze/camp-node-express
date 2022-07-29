@@ -22,7 +22,7 @@ app.get("/json",function(req,res){
     res.json({"message" : (process.env.MESSAGE_STYLE === "uppercase" ? m.toUpperCase(): m)})
 })
 
-app.get('/now', function(req, res) {
+app.get('/now', function(req, res, next) {
     req["time"] = new Date();
     next();
   }, function(req, res) {
