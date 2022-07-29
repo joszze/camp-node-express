@@ -7,7 +7,7 @@ console.log("Hello World");
 
 app.use("/public", express.static(__dirname + "/public"))
 
-app.use(function(req,rest,next){
+app.use("/",function(req,rest,next){
     console.log(`${req.method} ${req.path} ${req.ip} `);
     next()
 })
